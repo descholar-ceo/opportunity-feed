@@ -15,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "stylelint-f": "npx stylelint **/*.{css,scss}",
+    "eslint-f": "eslint . --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +46,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.19.0"
   }
 }
