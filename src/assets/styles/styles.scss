@@ -121,7 +121,6 @@ form,
 }
 
 .p-vertical {
-  // color: #e8e8e8;
   display: inline;
   margin: 0 1rem 0 1rem;
 }
@@ -129,59 +128,24 @@ form,
 .td-middle {
   grid-template-columns: 1fr 1fr;
   border-right: 1px solid #5885af;
-
-  .percent-circle {
-    width: $percent-circle-diameter;
-    height: $percent-circle-diameter;
-    border-radius: 50%;
-    background-color: $primary-color;
-    position: relative;
-
-    &::after {
-      display: block;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      height: $percent-circle-measures;
-      width: $percent-circle-measures;
-      line-height: $percent-circle-measures;
-      border-radius: 50%;
-      background-color: #fff;
-      font-size: 1.4em;
-      text-align: center;
-    }
-
-    @for $counter from 1 through 50 {
-      &.percent-circle-#{$counter} {
-        &::after {
-          content: "#{$counter}%";
-        }
-      }
-    }
-
-    @for $counter from 51 through 100 {
-      &.percent-circle-#{$counter} {
-        background-image:
-          linear-gradient(90deg, transparent 50%, $primary-color 50%),
-          linear-gradient(-90deg+(360*0.01*($counter - 50)), transparent 50%, #e8e8e8 50%);
-
-        &::after {
-          content: "";
-        }
-      }
-    }
-  }
+  border-left: 1px solid #5885af;
 }
 
 .td-rightmost {
   padding-left: 2rem;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
   row-gap: 1rem;
 
   .current-chapter-container {
     text-transform: uppercase;
-    color: #8a8888;
     font-size: 0.9rem;
+    text-align: center;
+
+    img {
+      height: 3rem;
+      width: 3rem;
+      border-radius: 100%;
+    }
   }
 }
 
