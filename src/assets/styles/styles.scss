@@ -51,14 +51,25 @@ body {
 .opportunity-row {
   border: 1px solid #e8e8e8;
   margin: 1rem 0 1rem 0;
-  display: block;
   padding: 1rem;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  background-color: #41729F;
-  color: #C3E0E5;
+  background-color: #41729f;
+  color: #c3e0e5;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.skill-btn {
+  height: 40px;
+  border: 1px solid #c3e0e5;
+  border-radius: 15rem;
+  font-size: 0.8rem;
+  margin: 0.2em;
+  padding: 0.1rem;
+  background-color: transparent;
+  color: #c3e0e5;
+  width: 80%;
 }
 
 hr {
@@ -77,7 +88,6 @@ form,
 .td-leftmost {
   grid-template-rows: 0.5fr 2fr 0.5fr 0.5fr 0.5fr;
   row-gap: 1rem;
-  width: 60%;
   word-wrap: break-word;
 }
 
@@ -92,7 +102,7 @@ form,
 }
 
 .book-title {
-  font-weight: 500;
+  font-weight: bold;
   font-size: 1.2rem;
   display: grid;
   align-items: center;
@@ -119,7 +129,6 @@ form,
 .td-middle {
   grid-template-columns: 1fr 1fr;
   border-right: 1px solid #5885af;
-  width: 20%;
 
   .percent-circle {
     width: $percent-circle-diameter;
@@ -168,7 +177,6 @@ form,
   padding-left: 2rem;
   grid-template-rows: 1fr 1fr 1fr;
   row-gap: 1rem;
-  width: 20%;
 
   .current-chapter-container {
     text-transform: uppercase;

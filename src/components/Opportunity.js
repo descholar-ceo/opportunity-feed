@@ -8,6 +8,7 @@ const Opportunity = ({ opportunity }) => {
     remote,
     locations,
     compensation,
+    skills,
   } = opportunity;
   let currency; let minAmount; let maxAmount; let
     periodicity;
@@ -19,6 +20,14 @@ const Opportunity = ({ opportunity }) => {
     periodicity = data.periodicity;
   }
   const mLocations = locations.length !== 0 ? locations.map((loc) => <span className="margin-5" key={loc}>{loc}</span>) : '';
+  const skillSet = skills.length !== 0 ? skills.slice(0, 4).map((skill) => {
+    const { name } = skill;
+    return (
+      <button type="button" key="name" className="skill-btn">
+        {name}
+      </button>
+    );
+  }) : '';
   return (
     <div className="display-grid opportunity-row">
       <div className="display-grid td-leftmost">
@@ -51,7 +60,9 @@ const Opportunity = ({ opportunity }) => {
           ) : 'Salary to be defined'}
         </p>
       </div>
-      <div className="display-grid centered-content td-middle" />
+      <div className="display-grid centered-content td-middle">
+        {skillSet}
+      </div>
       <div className="display-grid td-rightmost">
         <h2 className="current-chapter-container">Current Chapter</h2>
         <h3>Chapter 17</h3>
@@ -67,6 +78,11 @@ Opportunity.propTypes = {
     type: PropTypes.string,
     remote: PropTypes.bool.isRequired,
     locations: PropTypes.string.isRequired,
+    skills: PropTypes.shape({
+      length: PropTypes.func.isRequired,
+      map: PropTypes.func.isRequired,
+      slice: PropTypes.func.isRequired,
+    }).isRequired,
     compensation: PropTypes.shape({
       data: PropTypes.shape({
         minAmount: PropTypes.string.isRequired,
