@@ -7793,6 +7793,11 @@ last-call-webpack-plugin@^3.0.0:
     lodash "^4.17.5"
     webpack-sources "^1.1.0"
 
+ldbutton@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ldbutton/-/ldbutton-1.0.2.tgz#04144ae51f21ca121a371eef33c40e9788bd0b2f"
+  integrity sha512-eQ/Bke4QGjXN23oy15avqIZUbKduUIkbeoWKwE+mY22sc/Q6lLa4il3dQTY7P6F39p0D9CrQwLI0Ds6lJKao4g==
+
 leven@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/leven/-/leven-3.1.0.tgz#77891de834064cccba82ae7842bb6b14a13ed7f2"

@@ -5,7 +5,7 @@ import {
 
 export const getAllPeople = () => async (dispatch) => {
   try {
-    const res = await axios.post('https://search.torre.co/people/_search/?offset=100&size=50', {});
+    const res = await axios.post('https://search.torre.co/people/_search/?offset=100&size=10', {});
     dispatch({ type: GET_ALL_PEOPLE, payload: res.data });
   } catch (err) {
     dispatch({
@@ -17,7 +17,7 @@ export const getAllPeople = () => async (dispatch) => {
 
 export const getAllOpportunities = () => async (dispatch) => {
   try {
-    const res = await axios.post('https://search.torre.co/opportunities/_search/?offset=100&size=50', {});
+    const res = await axios.post('https://search.torre.co/opportunities/_search/?offset=100&size=10', {});
     dispatch({ type: GET_ALL_OPPORTUNITIES, payload: res.data });
   } catch (err) {
     dispatch({

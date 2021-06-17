@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/store';
 import './assets/styles/styles.scss';
+import './assets/styles/ldbtn.min.css';
 
 ReactDOM.render(
   <Provider store={store}>

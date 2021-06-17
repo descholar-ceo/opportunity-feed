@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { FaUser } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import Opportunity from '../components/Opportunity';
+import Loading from '../components/Loading';
 
 const OpportunityList = ({ opportunities, filter }) => {
   const opportunitiesToDisplay = filter === 'All' ? opportunities.results : opportunities.results.filter((opportunity) => opportunity.objective === filter);
@@ -10,7 +11,7 @@ const OpportunityList = ({ opportunities, filter }) => {
       key={`opportunity-number-${opportunity.id}`}
       opportunity={opportunity}
     />
-  ))) : 'Loading...';
+  ))) : (<Loading />);
   return (
     <div>
       <div className="header">
