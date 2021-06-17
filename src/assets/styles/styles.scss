@@ -127,8 +127,8 @@ form,
 
 .td-middle {
   grid-template-columns: 1fr 1fr;
-  border-right: 1px solid #5885af;
-  border-left: 1px solid #5885af;
+  // border-right: 1px solid #5885af;
+  // border-left: 1px solid #5885af;
 }
 
 .td-rightmost {
@@ -144,6 +144,19 @@ form,
     img {
       height: 3rem;
       width: 3rem;
+      border-radius: 100%;
+    }
+  }
+
+  .team-members {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 0.6rem;
+
+    img {
+      height: 2rem;
+      width: 2rem;
       border-radius: 100%;
     }
   }
