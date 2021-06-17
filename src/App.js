@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { getAllPeople, getAllOpportunities } from './redux/actions';
 import OpportunityList from './containers/OpportunityList';
 
-const App = ({ getAllPeople, getAllOpportunities }) => {
+const App = ({ getAllPeople, getAllOpportunities, page }) => {
   useEffect(() => {
     getAllPeople();
-    getAllOpportunities();
+    getAllOpportunities(page);
   }, []);
   return (
     <div>
@@ -19,10 +19,9 @@ const App = ({ getAllPeople, getAllOpportunities }) => {
 App.propTypes = {
   getAllPeople: PropTypes.func.isRequired,
   getAllOpportunities: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  people: state.person.persons,
-});
+const mapStateToProps = (state) => ({ page: state.page });
 
 export default connect(mapStateToProps, { getAllPeople, getAllOpportunities })(App);

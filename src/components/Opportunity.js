@@ -89,7 +89,7 @@ const Opportunity = ({ opportunity }) => {
       <div className="display-grid td-rightmost">
         <p className="current-chapter-container">{organizationDefined}</p>
         <p className="team-members">{teamMembers}</p>
-        <button className="primary-btn" type="button">View</button>
+        <button className="primary-btn" type="button">Read more about this job</button>
       </div>
     </div>
   );

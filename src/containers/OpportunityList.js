@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import Opportunity from '../components/Opportunity';
 import Loading from '../components/Loading';
 
-const OpportunityList = ({ opportunities, filter }) => {
-  const opportunitiesToDisplay = filter === 'All' ? opportunities.results : opportunities.results.filter((opportunity) => opportunity.objective === filter);
+const OpportunityList = ({ opportunities }) => {
+  const opportunitiesToDisplay = opportunities.results;
   const opportunityRows = opportunitiesToDisplay ? (opportunitiesToDisplay.map((opportunity) => (
     <Opportunity
       key={`opportunity-number-${opportunity.id}`}
@@ -34,12 +34,11 @@ const OpportunityList = ({ opportunities, filter }) => {
 };
 OpportunityList.propTypes = {
   opportunities: PropTypes.arrayOf(PropTypes.object).isRequired,
-  filter: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   opportunities: state.opportunity.opportunities,
-  filter: state.filter,
+  page: state.page,
 });
 
 // const mapDispatchToProps = dispatch => ({

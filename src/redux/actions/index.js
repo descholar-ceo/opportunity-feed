@@ -1,11 +1,11 @@
 import axios from 'axios';
 import {
-  CHANGE_FILTER, GET_ALL_OPPORTUNITIES, GET_ALL_PEOPLE, GET_ERRORS,
+  CHANGE_PAGE, GET_ALL_OPPORTUNITIES, GET_ALL_PEOPLE, GET_ERRORS,
 } from './types';
 
 export const getAllPeople = () => async (dispatch) => {
   try {
-    const res = await axios.post('https://search.torre.co/people/_search/?offset=100&size=10', {});
+    const res = await axios.post('https://search.torre.co/people/_search/?offset=10&size=10', {});
     dispatch({ type: GET_ALL_PEOPLE, payload: res.data });
   } catch (err) {
     dispatch({
@@ -15,9 +15,9 @@ export const getAllPeople = () => async (dispatch) => {
   }
 };
 
-export const getAllOpportunities = () => async (dispatch) => {
+export const getAllOpportunities = (page) => async (dispatch) => {
   try {
-    const res = await axios.post('https://search.torre.co/opportunities/_search/?offset=100&size=100', {});
+    const res = await axios.post(`https://search.torre.co/opportunities/_search/?offset=${page}&size=10`, {});
     dispatch({ type: GET_ALL_OPPORTUNITIES, payload: res.data });
   } catch (err) {
     dispatch({
@@ -27,7 +27,7 @@ export const getAllOpportunities = () => async (dispatch) => {
   }
 };
 
-export const changeFilter = (filter) => ({
-  type: CHANGE_FILTER,
-  filter,
+export const changeFilter = (page) => ({
+  type: CHANGE_PAGE,
+  page,
 });
