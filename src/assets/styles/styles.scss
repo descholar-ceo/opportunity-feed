@@ -1,22 +1,18 @@
 @import 'reset';
 @import 'variables';
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Roboto+Slab:wght@300;400;500&display=swap');
 @import 'utilities';
-
-* {
-  box-sizing: border-box;
-  font-family: 'Roboto Slab', serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
   background-color: #f2f3f7;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header {
   background-color: #fff;
   padding: 0.7rem;
   border-bottom: solid 1px #e8e8e8;
+  height: 100px;
 }
 
 .nav {
@@ -34,7 +30,6 @@ body {
 
   .nav-left {
     flex-direction: row;
-    font-family: 'Montserrat', sans-serif;
 
     h1 {
       font-size: 2rem;
@@ -48,18 +43,27 @@ body {
   }
 }
 
-tr {
+.list-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.opportunity-row {
   border: 1px solid #e8e8e8;
   margin: 1rem 0 1rem 0;
   display: block;
   padding: 1rem;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  background-color: #fff;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  background-color: #41729F;
+  color: #C3E0E5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 hr {
   width: 80%;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #5885af;
   margin: 2rem auto;
 }
 
@@ -71,26 +75,35 @@ form,
 }
 
 .td-leftmost {
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  row-gap: 0.2rem;
+  grid-template-rows: 0.5fr 2fr 0.5fr 0.5fr 0.5fr;
+  row-gap: 1rem;
+  width: 60%;
+  word-wrap: break-word;
+}
+
+.globe {
+  display: flex;
+  font-style: italic;
 }
 
 .book-category {
-  color: #9e9e9e;
-  font-family: 'Roboto Slab', sans-serif;
   font-weight: 500;
   font-size: 0.9rem;
 }
 
 .book-title {
-  color: #121212;
-  font-family: 'Roboto Slab', sans-serif;
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  word-wrap: break-word;
+  word-break: break-all;
+  text-overflow: ellipsis;
 }
 
-.option-btn {
-  background-color: #fff;
+.locations {
+  width: 100%;
 }
 
 .author {
@@ -98,30 +111,21 @@ form,
 }
 
 .p-vertical {
-  color: #e8e8e8;
+  // color: #e8e8e8;
   display: inline;
   margin: 0 1rem 0 1rem;
 }
 
 .td-middle {
   grid-template-columns: 1fr 1fr;
-  border-right: 1px solid #e8e8e8;
-
-  .percent-number {
-    font-size: 2rem;
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  .completed-text {
-    color: #9e9e9e;
-    font-family: 'Montserrat', sans-serif;
-  }
+  border-right: 1px solid #5885af;
+  width: 20%;
 
   .percent-circle {
     width: $percent-circle-diameter;
     height: $percent-circle-diameter;
     border-radius: 50%;
-    background-color: $blue-color;
+    background-color: $primary-color;
     position: relative;
 
     &::after {
@@ -149,7 +153,7 @@ form,
     @for $counter from 51 through 100 {
       &.percent-circle-#{$counter} {
         background-image:
-          linear-gradient(90deg, transparent 50%, $blue-color 50%),
+          linear-gradient(90deg, transparent 50%, $primary-color 50%),
           linear-gradient(-90deg+(360*0.01*($counter - 50)), transparent 50%, #e8e8e8 50%);
 
         &::after {
@@ -164,7 +168,7 @@ form,
   padding-left: 2rem;
   grid-template-rows: 1fr 1fr 1fr;
   row-gap: 1rem;
-  font-family: 'Roboto Slab', sans-serif;
+  width: 20%;
 
   .current-chapter-container {
     text-transform: uppercase;
@@ -174,7 +178,6 @@ form,
 }
 
 .new-book-head {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #8a8888;
   text-transform: uppercase;
@@ -190,7 +193,6 @@ form {
     padding: 0.6rem;
     border: 1px solid #9e9e9e;
     outline: none;
-    font-family: 'Roboto Slab', sans-serif;
     background-color: #fff;
   }
 }

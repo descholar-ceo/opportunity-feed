@@ -1,5 +1,5 @@
-.blue-text {
-  color: $blue-color;
+.primary-text {
+  color: $primary-color;
 }
 
 .centered-content {
@@ -14,11 +14,17 @@
   display: flex;
 }
 
+.margin-5 {
+  margin: 5px;
+}
+
 .primary-btn {
   text-transform: uppercase;
-  background-color: $blue-color;
+  background-color: $primary-color;
   color: #fff;
   font-size: 0.7rem;
+  height: 100%;
   width: 100%;
+  margin: 0 auto;
   border-radius: 0.2rem;
 }

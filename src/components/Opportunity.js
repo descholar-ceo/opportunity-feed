@@ -1,30 +1,63 @@
 import PropTypes from 'prop-types';
+import { FaGlobe } from 'react-icons/fa';
 
 const Opportunity = ({ opportunity }) => {
-  const { objective, type } = opportunity;
+  const {
+    objective,
+    type,
+    remote,
+    locations,
+    compensation,
+  } = opportunity;
+  let currency; let minAmount; let maxAmount; let
+    periodicity;
+  const data = compensation ? compensation.data : null;
+  if (data) {
+    currency = data.currency;
+    minAmount = data.minAmount;
+    maxAmount = data.maxAmount;
+    periodicity = data.periodicity;
+  }
+  const mLocations = locations.length !== 0 ? locations.map((loc) => <span className="margin-5" key={loc}>{loc}</span>) : '';
   return (
-    <tr className="display-grid">
-      <td className="display-grid td-leftmost">
-        <h2 className="book-category">{ type }</h2>
+    <div className="display-grid opportunity-row">
+      <div className="display-grid td-leftmost">
+        <p className="book-category">{ type }</p>
         <h1 className="book-title">{objective}</h1>
-        <h3 className="blue-text author">Suzanne Collins</h3>
-        <div>
-          <button className="blue-text option-btn" type="submit">View</button>
-        </div>
-      </td>
-      <td className="display-grid centered-content td-middle">
-        <div className="percent-circle percent-circle-64" />
-        <div className="display-grid">
-          <h1 className="percent-number">64%</h1>
-          <h2 className="completed-text">Completed</h2>
-        </div>
-      </td>
-      <td className="display-grid td-rightmost">
+        <p className="remote">
+          {' '}
+          { remote ? (
+            <span className="globe">
+              <FaGlobe />
+              {' '}
+              Remote
+            </span>
+          ) : ''}
+        </p>
+        <p className="locations">{mLocations}</p>
+        <p>
+          {(data && compensation) ? (
+            <span>
+              <span>{currency}</span>
+              {' '}
+              <span>{minAmount}</span>
+              {' '}
+              -
+              {' '}
+              <span>{maxAmount}</span>
+              /
+              <span>{periodicity}</span>
+            </span>
+          ) : 'Salary to be defined'}
+        </p>
+      </div>
+      <div className="display-grid centered-content td-middle" />
+      <div className="display-grid td-rightmost">
         <h2 className="current-chapter-container">Current Chapter</h2>
         <h3>Chapter 17</h3>
-        <button className="primary-btn" type="button">Update Progress</button>
-      </td>
-    </tr>
+        <button className="primary-btn" type="button">View</button>
+      </div>
+    </div>
   );
 };
 
@@ -32,6 +65,16 @@ Opportunity.propTypes = {
   opportunity: PropTypes.shape({
     objective: PropTypes.string,
     type: PropTypes.string,
+    remote: PropTypes.bool.isRequired,
+    locations: PropTypes.string.isRequired,
+    compensation: PropTypes.shape({
+      data: PropTypes.shape({
+        minAmount: PropTypes.string.isRequired,
+        periodicity: PropTypes.string.isRequired,
+        maxAmount: PropTypes.string.isRequired,
+        currency: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
   }).isRequired,
 };
 

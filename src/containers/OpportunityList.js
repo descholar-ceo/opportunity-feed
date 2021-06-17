@@ -16,7 +16,7 @@ const OpportunityList = ({ opportunities, filter }) => {
       <div className="header">
         <div className="nav display-grid">
           <div className="nav-left display-flex centered-content">
-            <h1 className="blue-text">Opportunity Feed</h1>
+            <h1 className="primary-text">Opportunity Feed</h1>
             <h4>Opportunities</h4>
             <h4>People</h4>
           </div>
@@ -25,11 +25,9 @@ const OpportunityList = ({ opportunities, filter }) => {
           </div>
         </div>
       </div>
-      <table>
-        <tbody>
-          {opportunityRows}
-        </tbody>
-      </table>
+      <div className="list-container">
+        {opportunityRows}
+      </div>
     </div>
   );
 };
