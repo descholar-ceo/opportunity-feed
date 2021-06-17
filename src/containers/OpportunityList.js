@@ -3,16 +3,27 @@ import { FaUser } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import Opportunity from '../components/Opportunity';
 import Loading from '../components/Loading';
+import { changePage, getAllOpportunities } from '../redux/actions';
 
-const OpportunityList = ({ opportunities, page }) => {
+const OpportunityList = ({
+  opportunities, page, changePage, getAllOpportunities,
+}) => {
   const opportunitiesToDisplay = opportunities.results;
-  const numberOfPages = Math.ceil(opportunities.total / 10);
+  const numberOfPages = Math.ceil(opportunities.total / 15);
   const opportunityRows = opportunitiesToDisplay ? (opportunitiesToDisplay.map((opportunity) => (
     <Opportunity
       key={`opportunity-number-${opportunity.id}`}
       opportunity={opportunity}
     />
   ))) : (<Loading />);
+  const handleNextPage = () => {
+    changePage(page + 15);
+    getAllOpportunities(page);
+  };
+  const handlePreviousPage = () => {
+    changePage(page - 15);
+    getAllOpportunities(page);
+  };
   return (
     <div>
       <div className="header">
@@ -31,15 +42,15 @@ const OpportunityList = ({ opportunities, page }) => {
         {opportunityRows}
       </div>
       <div className="control-btns-container">
-        <button type="button" className="previous-btn">
+        <button type="button" className="previous-btn" onClick={() => handlePreviousPage()}>
           Previous page
           {' '}
-          {`${page - 1} / ${numberOfPages}`}
+          {`${page - 14} / ${numberOfPages}`}
         </button>
-        <button type="button" className="next-btn">
+        <button type="button" className="next-btn" onClick={() => handleNextPage()}>
           Next page
           {' '}
-          {`${page + 1} / ${numberOfPages}`}
+          {`${page + 14} / ${numberOfPages}`}
         </button>
       </div>
     </div>
@@ -48,6 +59,8 @@ const OpportunityList = ({ opportunities, page }) => {
 OpportunityList.propTypes = {
   opportunities: PropTypes.arrayOf(PropTypes.object).isRequired,
   page: PropTypes.number.isRequired,
+  changePage: PropTypes.func.isRequired,
+  getAllOpportunities: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -55,9 +68,4 @@ const mapStateToProps = (state) => ({
   page: state.page,
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   removeBook: book => dispatch(removeBookAction(book)),
-//   changeFilter: filter => dispatch(changeFilter(filter)),
-// });
-
-export default connect(mapStateToProps, null)(OpportunityList);
+export default connect(mapStateToProps, { changePage, getAllOpportunities })(OpportunityList);

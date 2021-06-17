@@ -17,7 +17,7 @@ export const getAllPeople = () => async (dispatch) => {
 
 export const getAllOpportunities = (page) => async (dispatch) => {
   try {
-    const res = await axios.post(`https://search.torre.co/opportunities/_search/?offset=${page}&size=10`, {});
+    const res = await axios.post(`https://search.torre.co/opportunities/_search/?offset=${page}&size=15`, {});
     dispatch({ type: GET_ALL_OPPORTUNITIES, payload: res.data });
   } catch (err) {
     dispatch({
@@ -27,7 +27,6 @@ export const getAllOpportunities = (page) => async (dispatch) => {
   }
 };
 
-export const changeFilter = (page) => ({
-  type: CHANGE_PAGE,
-  page,
-});
+export const changePage = (page) => (dispatch) => {
+  dispatch({ type: CHANGE_PAGE, page });
+};
