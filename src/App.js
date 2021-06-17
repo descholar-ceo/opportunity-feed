@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getAllPeople, getAllOpportunities } from './redux/actions';
+import OpportunityList from './containers/OpportunityList';
 
 const App = ({ getAllPeople, getAllOpportunities }) => {
   useEffect(() => {
@@ -10,7 +11,7 @@ const App = ({ getAllPeople, getAllOpportunities }) => {
   }, []);
   return (
     <div>
-      <h1>Hello react</h1>
+      <OpportunityList />
     </div>
   );
 };
