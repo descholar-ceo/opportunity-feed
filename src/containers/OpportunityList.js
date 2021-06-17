@@ -9,7 +9,7 @@ const OpportunityList = ({
   opportunities, page, changePage, getAllOpportunities,
 }) => {
   const opportunitiesToDisplay = opportunities.results;
-  const numberOfPages = Math.ceil(opportunities.total / 15);
+  const numberOfPages = opportunities.total;
   const opportunityRows = opportunitiesToDisplay ? (opportunitiesToDisplay.map((opportunity) => (
     <Opportunity
       key={`opportunity-number-${opportunity.id}`}
@@ -17,12 +17,16 @@ const OpportunityList = ({
     />
   ))) : (<Loading />);
   const handleNextPage = () => {
-    changePage(page + 15);
-    getAllOpportunities(page);
+    if (page + 15 <= opportunities.total) {
+      changePage(page + 15);
+      getAllOpportunities(page);
+    }
   };
   const handlePreviousPage = () => {
-    changePage(page - 15);
-    getAllOpportunities(page);
+    if (page - 15 > 0) {
+      changePage(page - 15);
+      getAllOpportunities(page);
+    }
   };
   return (
     <div>
@@ -45,12 +49,12 @@ const OpportunityList = ({
         <button type="button" className="previous-btn" onClick={() => handlePreviousPage()}>
           Previous page
           {' '}
-          {`${page - 14} / ${numberOfPages}`}
+          {`${page} / ${numberOfPages}`}
         </button>
         <button type="button" className="next-btn" onClick={() => handleNextPage()}>
           Next page
           {' '}
-          {`${page + 14} / ${numberOfPages}`}
+          {`${page + 15} / ${numberOfPages}`}
         </button>
       </div>
     </div>
