@@ -1,8 +1,17 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Person = ({ person }) => {
   const {
-    remoter, picture, name, locationName, professionalHeadline, skills, openTo, compensations,
+    remoter,
+    picture,
+    name,
+    locationName,
+    professionalHeadline,
+    skills,
+    openTo,
+    compensations,
+    username,
   } = person;
   const skillSet = skills.length !== 0 ? (skills.slice(0, 4).map((skill) => {
     const { name } = skill;
@@ -29,7 +38,7 @@ const Person = ({ person }) => {
     </button>
   ))) : '';
   return (
-    <a href="#h">
+    <Link to={`/people/details/${username}`}>
       <div className="person-row">
         <div className="display-grid td-person-leftmost">
           <img src={picture || 'https://res.cloudinary.com/descholar/image/upload/v1619552670/n7cdvpeomukfih68zzcz.svg'} alt="fauser" />
@@ -56,7 +65,7 @@ const Person = ({ person }) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
@@ -70,6 +79,7 @@ Person.propTypes = {
     skills: PropTypes.shape().isRequired,
     openTo: PropTypes.shape().isRequired,
     compensations: PropTypes.shape().isRequired,
+    username: PropTypes.string.isRequired,
   }).isRequired,
 };
 
