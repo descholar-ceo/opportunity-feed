@@ -207,9 +207,53 @@ form,
   margin: 1rem 0 1rem 0;
   padding: 1rem;
   display: grid;
-  grid-template-columns: 0.5fr 2fr 1fr;
+  grid-template-columns: 0.3fr 0.8fr 1fr;
   background-color: #41729f;
   color: #c3e0e5;
   border-radius: 0.8rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  p,
+  h1 {
+    display: grid;
+    align-items: center;
+  }
+
+  .skill-person-btn {
+    height: fit-content;
+    border: 1px solid #c3e0e5;
+    border-radius: 15rem;
+    font-size: 0.8rem;
+    margin: 0.2em;
+    padding: 0.2rem;
+    background-color: transparent;
+    color: #c3e0e5;
+    width: fit-content;
+  }
+
+  .td-person-leftmost {
+    display: grid;
+    place-items: center;
+
+    img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 100%;
+    }
+  }
+
+  .td-person-middle {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  .td-person-rightmost {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    .skill-set-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }

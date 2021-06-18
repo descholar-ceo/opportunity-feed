@@ -11,9 +11,14 @@ const App = ({ getAllPeople, getAllOpportunities, page }) => {
     getAllOpportunities(page);
   }, []);
   return (
-    <div>
-      <PersonList />
-    </div>
+    <>
+      {/* <div>
+        <OpportunityList />
+      </div> */}
+      <div>
+        <PersonList />
+      </div>
+    </>
   );
 };
 

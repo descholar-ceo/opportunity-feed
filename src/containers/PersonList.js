@@ -13,7 +13,7 @@ const PersonList = ({
   const personRows = personsToDisplay ? (personsToDisplay.map((person) => (
     <Person
       key={`person-number-${person.id}`}
-      opportunity={person}
+      person={person}
     />
   ))) : (<Loading />);
   const handleNextPage = () => {

@@ -5,7 +5,7 @@ import {
 
 export const getAllPeople = (page) => async (dispatch) => {
   try {
-    const res = await axios.post(`https://search.torre.co/people/_search/?offset=${page}&size=10`, {});
+    const res = await axios.post(`https://search.torre.co/people/_search/?offset=${page}&size=15`, {});
     dispatch({ type: GET_ALL_PEOPLE, payload: res.data });
   } catch (err) {
     dispatch({
