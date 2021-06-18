@@ -15,7 +15,7 @@ const PersonDetails = ({ getOnePerson, person, match: { params } }) => {
         professionalHeadline,
         location,
         pictureThumbnail,
-      }, strengths, interests, languages, jobs,
+      }, strengths, interests, languages, jobs, education,
     } = person;
     const strenghtDisplay = strengths.length !== 0 ? (strengths.slice(0, 5).map((stren) => {
       const { name } = stren;
@@ -62,6 +62,30 @@ const PersonDetails = ({ getOnePerson, person, match: { params } }) => {
         </div>
       );
     })) : '';
+    const educationToDisplay = education.length !== 0 ? (education.slice(0, 4).map((educ) => {
+      const {
+        name, fromYear, toYear, organizations, responsibilities,
+      } = educ;
+      const respoDisplay = responsibilities.length !== 0 ? (responsibilities.map((respo) => <button className="skill-person-btn" key={respo} type="button">{respo}</button>)) : '';
+      const organizationName = organizations.length !== 0 ? organizations[0] : '';
+      return (
+        <div key={name} className="one-experience-row">
+          <h1>{name}</h1>
+          <h2>{organizationName.name}</h2>
+          <h3>
+            <span>
+              {fromYear}
+            </span>
+            {' - '}
+            <span>
+              {toYear}
+            </span>
+          </h3>
+          <p>{respoDisplay}</p>
+        </div>
+      );
+    })) : '';
+
     return (
       <div className="person-profile-container">
         <div className="person-address">
@@ -103,7 +127,10 @@ const PersonDetails = ({ getOnePerson, person, match: { params } }) => {
           <h1>Experience</h1>
           {experienceToDisplay}
         </div>
-        <div className="person-jobs" />
+        <div className="person-experience">
+          <h1>Education</h1>
+          {educationToDisplay}
+        </div>
       </div>
     );
   } return <Loading />;
