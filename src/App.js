@@ -13,8 +13,8 @@ const App = ({ getAllPeople, getAllOpportunities, page }) => {
   }, []);
   return (
     <>
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Routes />
       </BrowserRouter>
     </>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  CHANGE_PAGE, GET_ALL_OPPORTUNITIES, GET_ALL_PEOPLE, GET_ERRORS,
+  CHANGE_PAGE, CHANGE_TAB, GET_ALL_OPPORTUNITIES, GET_ALL_PEOPLE, GET_ERRORS,
 } from './types';
 
 export const getAllPeople = (page) => async (dispatch) => {
@@ -29,4 +29,8 @@ export const getAllOpportunities = (page) => async (dispatch) => {
 
 export const changePage = (page) => (dispatch) => {
   dispatch({ type: CHANGE_PAGE, page });
+};
+
+export const changeTab = (tab) => (dispatch) => {
+  dispatch({ type: CHANGE_TAB, tab });
 };

@@ -28,3 +28,20 @@
   margin: 0 auto;
   border-radius: 0.2rem;
 }
+
+.link-btn {
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #000;
+  margin: 0.5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border: 1px solid #274472;
+  padding: 1rem;
+}
+
+.active {
+  background-color: #274472;
+  color: #c3e0e5;
+  border: none;
+}
