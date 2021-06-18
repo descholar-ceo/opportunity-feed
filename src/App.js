@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getAllPeople, getAllOpportunities } from './redux/actions';
-// import OpportunityList from './containers/OpportunityList';
+import OpportunityList from './containers/OpportunityList';
 import PersonList from './containers/PersonList';
+import Navbar from './components/Navbar';
 
 const App = ({ getAllPeople, getAllOpportunities, page }) => {
   useEffect(() => {
@@ -12,9 +13,10 @@ const App = ({ getAllPeople, getAllOpportunities, page }) => {
   }, []);
   return (
     <>
-      {/* <div>
+      <Navbar />
+      <div>
         <OpportunityList />
-      </div> */}
+      </div>
       <div>
         <PersonList />
       </div>

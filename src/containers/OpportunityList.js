@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { FaUser } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import Opportunity from '../components/Opportunity';
 import Loading from '../components/Loading';
@@ -30,18 +29,6 @@ const OpportunityList = ({
   };
   return (
     <div>
-      <div className="header">
-        <div className="nav display-grid">
-          <div className="nav-left display-flex centered-content">
-            <h1 className="primary-text">Opportunity Feed</h1>
-            <h4>Opportunities</h4>
-            <h4>People</h4>
-          </div>
-          <div className="display-grid centered-content nav-user-container">
-            <FaUser className="blue-text" />
-          </div>
-        </div>
-      </div>
       <div className="list-container">
         {opportunityRows}
       </div>
