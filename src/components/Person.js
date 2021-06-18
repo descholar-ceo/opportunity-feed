@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 const Person = ({ person }) => {
   const {
-    remoter, picture, name, locationName, professionalHeadline, skills,
+    remoter, picture, name, locationName, professionalHeadline, skills, openTo, compensations,
   } = person;
-  const skillSet = skills.length !== 0 ? (skills.slice(0, 8).map((skill) => {
+  const skillSet = skills.length !== 0 ? (skills.slice(0, 4).map((skill) => {
     const { name } = skill;
     return (
       <button type="button" key={name} className="skill-person-btn">
@@ -12,6 +12,22 @@ const Person = ({ person }) => {
       </button>
     );
   })) : '';
+  const comps = compensations.length !== 0 ? (Object.keys(compensations).map((opn) => {
+    const { amount, currency, periodicity } = compensations[opn];
+    return (
+      <button type="button" key={opn} className="skill-person-btn">
+        <span className="opn-span">{opn}</span>
+        {currency}
+        {amount}
+        {periodicity}
+      </button>
+    );
+  })) : '';
+  const openTos = openTo.length !== 0 ? (openTo.slice(0, 4).map((opn) => (
+    <button type="button" key={opn} className="skill-person-btn">
+      {opn}
+    </button>
+  ))) : '';
   return (
     <div className="person-row">
       <div className="display-grid td-person-leftmost">
@@ -26,9 +42,17 @@ const Person = ({ person }) => {
           {locationName}
         </p>
         <p>{remoter ? 'Can work remotely' : ''}</p>
+        <p className="pricing-container">{comps}</p>
       </div>
       <div className="display-grid td-person-rightmost">
-        <p className="skill-set-container">{skillSet}</p>
+        <div className="skill-set-container">
+          <h4>Skills:</h4>
+          <p>{skillSet}</p>
+        </div>
+        <div className="open-to-container">
+          {openTo.length !== 0 ? <h4>Open To:</h4> : ''}
+          <p>{openTos}</p>
+        </div>
       </div>
     </div>
   );
@@ -42,6 +66,8 @@ Person.propTypes = {
     locationName: PropTypes.string.isRequired,
     professionalHeadline: PropTypes.string.isRequired,
     skills: PropTypes.shape().isRequired,
+    openTo: PropTypes.shape().isRequired,
+    compensations: PropTypes.shape().isRequired,
   }).isRequired,
 };
 

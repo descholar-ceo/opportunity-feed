@@ -244,16 +244,53 @@ form,
 
   .td-person-middle {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr 1fr;
+
+    .pricing-container {
+      display: flex;
+      flex-direction: row;
+
+      .opn-span {
+        font-weight: bold;
+        margin-right: 0.2rem;
+      }
+    }
   }
 
   .td-person-rightmost {
     display: grid;
     grid-template-rows: 1fr 1fr;
 
-    .skill-set-container {
+    .skill-set-container,
+    .open-to-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 4fr;
+      place-items: center;
+      column-gap: 1rem;
+
+      p {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
+
+    // .open-to-container {
+    //   display: grid;
+    //   grid-template-columns: 1fr 4fr;
+    //   place-items: center;
+    //   column-gap: 1rem;
+
+    //   div {
+    //     display: grid;
+    //     grid-template-rows: repeat(4, 1fr);
+    //     place-items: center;
+
+    //     p {
+    //       display: grid;
+    //       grid-template-columns: repeat(4, 1fr);
+    //       place-items: center;
+    //     }
+    //   }
+    // }
   }
 }
