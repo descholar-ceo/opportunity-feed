@@ -1,0 +1,47 @@
+.primary-text {
+  color: $primary-color;
+}
+
+.centered-content {
+  place-items: center;
+}
+
+.display-grid {
+  display: grid;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.margin-5 {
+  margin: 5px;
+}
+
+.primary-btn {
+  text-transform: uppercase;
+  background-color: $primary-color;
+  color: #fff;
+  font-size: 0.7rem;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0.2rem;
+}
+
+.link-btn {
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #000;
+  margin: 0.5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border: 1px solid #274472;
+  padding: 1rem;
+}
+
+.active {
+  background-color: #274472;
+  color: #c3e0e5;
+  border: none;
+}
