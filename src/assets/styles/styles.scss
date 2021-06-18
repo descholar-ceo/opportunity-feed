@@ -8,6 +8,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header {
   background-color: #fff;
   padding: 0.7rem;
@@ -220,7 +224,6 @@ form,
   }
 
   .skill-person-btn {
-    height: fit-content;
     border: 1px solid #c3e0e5;
     border-radius: 15rem;
     font-size: 0.8rem;
@@ -245,6 +248,15 @@ form,
   .td-person-middle {
     display: grid;
     grid-template-rows: 1fr 2fr 1fr 1fr 1fr;
+
+    .work-remote {
+      font-size: 0.7rem;
+      font-style: italic;
+    }
+
+    .location-name {
+      font-size: 0.9rem;
+    }
 
     .pricing-container {
       display: flex;
@@ -273,24 +285,17 @@ form,
         grid-template-columns: repeat(4, 1fr);
       }
     }
+  }
 
-    // .open-to-container {
-    //   display: grid;
-    //   grid-template-columns: 1fr 4fr;
-    //   place-items: center;
-    //   column-gap: 1rem;
+  &:hover {
+    background-color: #c3e0e5;
+    color: #274472;
+    cursor: pointer;
 
-    //   div {
-    //     display: grid;
-    //     grid-template-rows: repeat(4, 1fr);
-    //     place-items: center;
-
-    //     p {
-    //       display: grid;
-    //       grid-template-columns: repeat(4, 1fr);
-    //       place-items: center;
-    //     }
-    //   }
-    // }
+    .skill-person-btn {
+      background-color: #c3e0e5;
+      color: #274472;
+      border: 1px solid #274472;
+    }
   }
 }

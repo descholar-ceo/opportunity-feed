@@ -29,32 +29,34 @@ const Person = ({ person }) => {
     </button>
   ))) : '';
   return (
-    <div className="person-row">
-      <div className="display-grid td-person-leftmost">
-        <img src={picture} alt="fauser" />
-      </div>
-      <div className="td-person-middle">
-        <h1>{name}</h1>
-        <p>{professionalHeadline}</p>
-        <p>
-          From
-          {' '}
-          {locationName}
-        </p>
-        <p>{remoter ? 'Can work remotely' : ''}</p>
-        <p className="pricing-container">{comps}</p>
-      </div>
-      <div className="display-grid td-person-rightmost">
-        <div className="skill-set-container">
-          <h4>Skills:</h4>
-          <p>{skillSet}</p>
+    <a href="#h">
+      <div className="person-row">
+        <div className="display-grid td-person-leftmost">
+          <img src={picture || 'https://res.cloudinary.com/descholar/image/upload/v1619552670/n7cdvpeomukfih68zzcz.svg'} alt="fauser" />
         </div>
-        <div className="open-to-container">
-          {openTo.length !== 0 ? <h4>Open To:</h4> : ''}
-          <p>{openTos}</p>
+        <div className="td-person-middle">
+          <h1>{name}</h1>
+          <p>{professionalHeadline}</p>
+          <p className="location-name">
+            From
+            {' '}
+            {locationName}
+          </p>
+          <p className="work-remote">{remoter ? 'Can work remotely' : ''}</p>
+          <p className="pricing-container">{comps}</p>
+        </div>
+        <div className="display-grid td-person-rightmost">
+          <div className="skill-set-container">
+            <h4>Skills:</h4>
+            <p>{skillSet}</p>
+          </div>
+          <div className="open-to-container">
+            {openTo.length !== 0 ? <h4>Open To:</h4> : ''}
+            <p>{openTos}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

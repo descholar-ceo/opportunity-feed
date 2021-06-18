@@ -47,14 +47,11 @@ const PersonList = ({
       </div>
       <div className="control-btns-container">
         <button type="button" className="previous-btn" onClick={() => handlePreviousPage()}>
-          Previous page
-          {' '}
-          {`${page} / ${numberOfPages}`}
+          {`${page > 1 ? (page - 15) : 1} - ${page === 1 ? (page + 14) : page} of ${numberOfPages}
+          records`}
         </button>
         <button type="button" className="next-btn" onClick={() => handleNextPage()}>
-          Next page
-          {' '}
-          {`${page + 15} / ${numberOfPages}`}
+          {`${page} - ${page + 14} of ${numberOfPages} records`}
         </button>
       </div>
     </div>
