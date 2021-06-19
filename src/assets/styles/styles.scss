@@ -50,6 +50,11 @@ a {
           background-color: transparent;
           color: #274472;
           cursor: pointer;
+
+          &:hover {
+            background-color: #274472;
+            color: #c3e0e5;
+          }
         }
 
         input {

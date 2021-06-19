@@ -5,3 +5,4 @@ export const GET_ONE_OPPORTUNITY = 'GET_ONE_OPPORTUNITY';
 export const CHANGE_PAGE = 'CHANGE_PAGE';
 export const GET_ERRORS = 'GET_ERRORS';
 export const CHANGE_TAB = 'CHANGE_TAB';
+export const CHANGE_FILTER = 'CHANGE_FILTER';

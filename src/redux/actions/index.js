@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {
+  CHANGE_FILTER,
   CHANGE_PAGE,
   CHANGE_TAB,
   GET_ALL_OPPORTUNITIES,
@@ -63,4 +64,8 @@ export const changePage = (page) => (dispatch) => {
 
 export const changeTab = (tab) => (dispatch) => {
   dispatch({ type: CHANGE_TAB, tab });
+};
+
+export const changeFilter = (filter) => (dispatch) => {
+  dispatch({ type: CHANGE_FILTER, filter });
 };
