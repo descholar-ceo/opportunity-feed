@@ -42,9 +42,6 @@ When you open it, you first see a list of new job opportunities presented on tor
 ### Usage
 - To start the development server: `yarn start` => this should launch the app in your default browser, otherwise access the app on `localhost:3000`
 
-## Contributions
-> How should I contribute? //Specify steps to follow inorder to contribute to this project, if it is allowed.
-
 ## Acknowledgement (s)
 - [Torre](https://torre.co)
 
