@@ -6,7 +6,7 @@ import Loading from '../components/Loading';
 
 const PersonDetails = ({ getOnePerson, person, match: { params } }) => {
   const { username } = params;
-  useEffect(async () => getOnePerson(username), []);
+  useEffect(() => getOnePerson(username), []);
 
   if (person.person) {
     const {

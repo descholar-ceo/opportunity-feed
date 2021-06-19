@@ -29,6 +29,11 @@
   border-radius: 0.2rem;
 }
 
+.opportunity-link-btn {
+  display: grid;
+  place-items: center;
+}
+
 .link-btn {
   text-transform: uppercase;
   background-color: transparent;
