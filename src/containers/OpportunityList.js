@@ -5,9 +5,12 @@ import Loading from '../components/Loading';
 import { changePage, getAllOpportunities } from '../redux/actions';
 
 const OpportunityList = ({
-  opportunities, page, changePage, getAllOpportunities,
+  opportunities, page, changePage, getAllOpportunities, filter,
 }) => {
-  const opportunitiesToDisplay = opportunities.results;
+  const opportunitiesToDisplay = filter === 'all' ? opportunities.results : opportunities.results.filter((opport) => {
+    const regExp = new RegExp(`^${filter}`, 'gi');
+    return opport.objective.match(regExp);
+  });
   const numberOfPages = opportunities.total;
   const opportunityRows = opportunitiesToDisplay ? (opportunitiesToDisplay.map((opportunity) => (
     <Opportunity
@@ -52,11 +55,13 @@ OpportunityList.propTypes = {
   page: PropTypes.number.isRequired,
   changePage: PropTypes.func.isRequired,
   getAllOpportunities: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   opportunities: state.opportunity.opportunities,
   page: state.page,
+  filter: state.filter.filter,
 });
 
 export default connect(mapStateToProps, { changePage, getAllOpportunities })(OpportunityList);

@@ -5,9 +5,12 @@ import Loading from '../components/Loading';
 import { changePage, getAllPeople } from '../redux/actions';
 
 const PersonList = ({
-  persons, page, changePage, getAllPeople,
+  persons, page, changePage, getAllPeople, filter,
 }) => {
-  const personsToDisplay = persons.results;
+  const personsToDisplay = filter === 'all' ? persons.results : persons.results.filter((pers) => {
+    const regExp = new RegExp(`^${filter}`, 'gi');
+    return pers.name.match(regExp);
+  });
   const numberOfPages = persons.total;
   const personRows = personsToDisplay ? (personsToDisplay.map((person) => (
     <Person
@@ -49,11 +52,13 @@ PersonList.propTypes = {
   page: PropTypes.number.isRequired,
   changePage: PropTypes.func.isRequired,
   getAllPeople: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   persons: state.person.persons,
   page: state.page,
+  filter: state.filter.filter,
 });
 
 export default connect(mapStateToProps, { changePage, getAllPeople })(PersonList);
