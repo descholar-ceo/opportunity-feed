@@ -14,7 +14,7 @@ a {
 }
 
 .header {
-  background-color: #C3E0E5;
+  background-color: #c3e0e5;
   padding: 0.7rem;
   border-bottom: solid 1px #e8e8e8;
   height: 100px;
@@ -48,7 +48,7 @@ a {
       }
 
       .brand-portion-2 {
-        color: #5885AF;
+        color: #5885af;
       }
     }
 
@@ -482,6 +482,7 @@ form,
     .location-content {
       display: flex;
       flex-direction: row;
+
       div {
         margin: 1rem;
       }
@@ -518,6 +519,7 @@ form,
       width: 200px;
       height: 300px;
       border-radius: 0.5rem;
+
       img {
         width: 7rem;
         height: 7rem;
