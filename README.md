@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Opportunity feed
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project description
+In this project I build a really simple application which help to get opportunities from [Torre](https://torre.co),
+When you open it, you first see a list of new job opportunities presented on torre.
 
-## Available Scripts
+## Screenshot
+![opportunity feed](./docs/screenshot.png)
 
-In the project directory, you can run:
+[Video presentation](https://www.loom.com/share/53ae7a93896e485ea4f23552a70be581)
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Built with
+- [React.js](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [SASS](https://sass-lang.com/)
+- [Ruby on Rails](https://rubyonrails.org/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
+- View list of all opportunities
+- View details of one opportunity
+- View list of all people
+- View details of one person
+- Search/filter one record on a given page
 
-### `yarn test`
+## Deployments
+- [Live frontend link](https://opportunity-feed.netlify.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Backend codes](https://github.com/descholar-ceo/opportunity-feed-backend)
 
-### `yarn build`
+## Running it locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [NodeJS v14.15.1 or higher](https://nodejs.org/en/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Setup
+- Clone && checkout the folder: `git clone https://github.com/descholar-ceo/opportunity-feed.git && cd opportunity-feed`
 
-### `yarn eject`
+- Install all dependencies: `npm i` or `yarn`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Usage
+- To start the development server: `yarn start` => this should launch the app in your default browser, otherwise access the app on `localhost:3000`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acknowledgement (s)
+- [Torre](https://torre.co)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Author
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Github: [descholar-ceo](https://github.com/descholar-ceo)
 
-## Learn More
+* Linkedin: [Mugirase Emmanuel](https://linkedin.com/in/mugirase-emmanuel)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Torre: [Mugirase Emmanuel](https://torre.co/en/emmanuellamugi)
