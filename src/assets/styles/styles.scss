@@ -14,7 +14,7 @@ a {
 }
 
 .header {
-  background-color: #fff;
+  background-color: #C3E0E5;
   padding: 0.7rem;
   border-bottom: solid 1px #e8e8e8;
   height: 100px;
@@ -38,10 +38,18 @@ a {
     grid-template-rows: repeat(2, 1fr);
     row-gap: 1rem;
 
-    h1 {
+    .brand-name {
       font-size: 2rem;
-      font-weight: 500;
+      font-weight: 900;
       margin-right: 0.7rem;
+
+      .brand-portion-1 {
+        color: #274472;
+      }
+
+      .brand-portion-2 {
+        color: #5885AF;
+      }
     }
 
     h4 {
