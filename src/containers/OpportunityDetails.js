@@ -49,7 +49,7 @@ const OpportunityDetails = ({ getOneOpportunity, opportunity, match: { params } 
       const { person: { name, professionalHeadline, pictureThumbnail } } = membr;
       return (
         <div key={name} className="member-card">
-          <img src={pictureThumbnail} alt={name} />
+          <img src={pictureThumbnail || 'https://res.cloudinary.com/descholar/image/upload/v1619552670/n7cdvpeomukfih68zzcz.svg'} alt={name} />
           <h1>{name}</h1>
           <h2>{professionalHeadline}</h2>
         </div>
