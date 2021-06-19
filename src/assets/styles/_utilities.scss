@@ -29,10 +29,15 @@
   border-radius: 0.2rem;
 }
 
+.opportunity-link-btn {
+  display: grid;
+  place-items: center;
+}
+
 .link-btn {
   text-transform: uppercase;
   background-color: transparent;
-  color: #000;
+  color: #274472;
   margin: 0.5rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;

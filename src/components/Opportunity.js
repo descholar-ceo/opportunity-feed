@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { FaGlobe } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Opportunity = ({ opportunity }) => {
   const {
@@ -10,7 +11,7 @@ const Opportunity = ({ opportunity }) => {
     compensation,
     skills,
     organizations,
-    members,
+    members, id,
   } = opportunity;
   let currency; let minAmount; let maxAmount; let
     periodicity;
@@ -89,7 +90,7 @@ const Opportunity = ({ opportunity }) => {
       <div className="display-grid td-rightmost">
         <p className="current-chapter-container">{organizationDefined}</p>
         <p className="team-members">{teamMembers}</p>
-        <button className="primary-btn" type="button">Read more about this job</button>
+        <Link to={`/opportunity/details/${id}`} className="primary-btn opportunity-link-btn">Read more about this job</Link>
       </div>
     </div>
   );
@@ -97,6 +98,7 @@ const Opportunity = ({ opportunity }) => {
 
 Opportunity.propTypes = {
   opportunity: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     objective: PropTypes.string,
     type: PropTypes.string,
     remote: PropTypes.bool.isRequired,

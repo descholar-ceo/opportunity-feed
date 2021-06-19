@@ -8,7 +8,10 @@ const Navbar = ({ changeTab, currentTab }) => (
   <div className="header">
     <div className="nav display-grid">
       <div className="nav-left">
-        <h1 className="primary-text">Opportunity Feed</h1>
+        <Link to="/" className="brand-name">
+          <span className="brand-portion-1">Opportunity</span>
+          <span className="brand-portion-2">Feed</span>
+        </Link>
         <div className="display-grid centered-content">
           <div className="nav-link-container">
             <Link className={`link-btn ${currentTab === 'opportunity' ? 'active' : ''}`} onClick={() => changeTab('opportunity')} to="/">Opportunities</Link>
