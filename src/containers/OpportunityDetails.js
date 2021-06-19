@@ -28,27 +28,27 @@ const OpportunityDetails = ({ getOneOpportunity, opportunity, match: { params } 
     const languageToDisplay = languages.length !== 0 ? (languages.map((lang) => {
       const { fluency, language: { name } } = lang;
       return (
-        <div key={name}>
+        <button key={name} type="button" className="language-btn">
           <span>{name}</span>
           <span>: </span>
           <span>{fluency}</span>
-        </div>
+        </button>
       );
     })) : '';
     const strengthToDisplay = strengths.length !== 0 ? (strengths.map((strng) => {
       const { name, experience } = strng;
       return (
-        <div key={name}>
+        <button key={name} type="button" className="skill-person-btn">
           <span>{name}</span>
           <span>: </span>
           <span>{experience}</span>
-        </div>
+        </button>
       );
     })) : '';
     const memberToDisplay = members.length !== 0 ? (members.map((membr) => {
       const { person: { name, professionalHeadline, pictureThumbnail } } = membr;
       return (
-        <div key={name}>
+        <div key={name} className="member-card">
           <img src={pictureThumbnail} alt={name} />
           <h1>{name}</h1>
           <h2>{professionalHeadline}</h2>
@@ -56,14 +56,16 @@ const OpportunityDetails = ({ getOneOpportunity, opportunity, match: { params } 
       );
     })) : '';
     return (
-      <div>
-        <h1>{objective}</h1>
-        <div>
-          <div>{organizationToDisplay}</div>
+      <div className="opportunity-details-container">
+        <div className="opportunity-details-headline">
+          <h1>{objective}</h1>
+          <div>
+            <div>{organizationToDisplay}</div>
+          </div>
         </div>
-        <div>
+        <div className="compensation-container">
           {compensation ? (
-            <div>
+            <div className="compensation-button">
               <span>{compensation.currency}</span>
               <span>{compensation.minAmount}</span>
               <span> - </span>
@@ -73,11 +75,16 @@ const OpportunityDetails = ({ getOneOpportunity, opportunity, match: { params } 
             </div>
           ) : ''}
         </div>
-        <div>{place.remote ? 'Remote' : ''}</div>
-        <div>{locationToDisplay || ''}</div>
-        <div>{languageToDisplay || ''}</div>
-        <div>{strengthToDisplay || ''}</div>
-        <div>{memberToDisplay || ''}</div>
+        <div className="location-container">
+          <div className="location-content">{place.remote ? <div>Remote</div> : ''}</div>
+          <div className="location-content">{locationToDisplay || ''}</div>
+        </div>
+        <div className="oppo-detls-lnge-container">{languageToDisplay || ''}</div>
+        <div className="oppo-detls-strengths-container">{strengthToDisplay || ''}</div>
+        <div>
+          <h1>Team members</h1>
+          <div className="team-member-container">{memberToDisplay || ''}</div>
+        </div>
       </div>
     );
   }
